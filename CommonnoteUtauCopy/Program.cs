@@ -53,6 +53,7 @@ foreach (var note in plugin.note)
 
 var commonnoteData = new CommonnoteData
 {
+    identifier = "commonnote",
     header = new CommonnoteHeader
     {
         resolution = 480,

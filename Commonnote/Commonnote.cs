@@ -21,7 +21,7 @@ namespace Commonnote
 
     public struct CommonnoteData
     {
-        public static string identifier = "commonnote";
+        public string identifier;
         public CommonnoteHeader header;
         public List<CommonnoteNote> notes;
     }

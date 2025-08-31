@@ -65,8 +65,8 @@ string defaultLyric = "a";
 for (int i = 0; i < cNotes.Count; i++)
 {
     var note = cNotes[i];
-    var start = note.start * 480 / resolution;
-    var length = (note.start + note.length) * 480 / resolution - start;
+    var start = (int)(note.start * 480 / resolution);
+    var length = (int)((note.start + note.length) * 480 / resolution - start);
     note.start = start;
     note.length = length;
     if (String.IsNullOrEmpty(note.label))
