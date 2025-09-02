@@ -7,15 +7,15 @@ namespace Commonnote
 {
     public struct CommonnoteNote
     {
-        public int start;
-        public int length;
+        public long start;
+        public long length;
         public string label;
         public int pitch;
     }
 
     public struct CommonnoteHeader
     {
-        public int resolution;
+        public long resolution;
         public string origin;
     }
 
