@@ -58,7 +58,7 @@ List<CommonnoteNote> FixOverlap(List<CommonnoteNote> cNotes)
 
 cNotes = FixOverlap(cNotes);
 
-int resolution = commonnoteData.header.resolution > 0 ? commonnoteData.header.resolution : 480;
+int resolution = (int)(commonnoteData.header.resolution > 0 ? commonnoteData.header.resolution : 480);
 
 string defaultLyric = "a";
 
@@ -104,7 +104,7 @@ void InsertPluginRest(
         insertLocation);
 }
 
-int currentTick = cNotes[0].start;
+int currentTick = (int)(cNotes[0].start);
 bool hasPrev = plugin.note.Count > 0 && plugin.note[0].GetNum() == "PREV";
 bool hasNext = plugin.note.Count > 0 && plugin.note[^1].GetNum() == "NEXT";
 int insertLocation = hasPrev ? 1 : 0;
@@ -113,18 +113,18 @@ foreach (var note in cNotes)
 {
     if (note.start > currentTick)
     {
-        InsertPluginRest(note.start - currentTick, plugin, insertLocation);
+        InsertPluginRest((int)(note.start - currentTick), plugin, insertLocation);
         insertLocation++;
     }
     InsertPluginNote(
-        note.length,
+        (int)(note.length),
         note.pitch,
         note.label,
         "",
         plugin,
         insertLocation);
     insertLocation++;
-    currentTick = note.start + note.length;
+    currentTick = (int)(note.start + note.length);
 }
 
 plugin.Output();
